@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: mahendrshinde/mysql-sample:sakila
+    restart: always
+    environment:
+      MYSQL_USERNAME: mahendra
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
