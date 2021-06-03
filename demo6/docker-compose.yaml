@@ -3,11 +3,21 @@ version: "3.5"
 services:
     w1:
         image: mahendrshinde/myweb:1
+        deploy:
+            replicas: 2
+        ports: 
+        - 80
         networks: 
         - net1
     
     w2:
         image: mahendrshinde/myweb:2
+        deploy:
+            replicas: 2
+        ports: 
+        - 80
+        depends_on: 
+        - w1
         networks: 
         - net1
 
